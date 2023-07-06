@@ -807,16 +807,19 @@
 
 
 .cart__item-head-name {
-    min-height: 28px;
+    line-height: 1.9rem;
+    max-height: 3.8rem;
     max-width: 190px;
     font-size: 1.4rem;
     font-weight: 500;
+    text-align: left;
     color: var(--text-color);
     margin: 0;
-    /* tao dau ... tren 1 dong*/
-    white-space: nowrap;
-    text-overflow: ellipsis;
     overflow: hidden;
+    /* tao dau ... tren 1 dong*/
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
 }
 
 
@@ -1223,7 +1226,8 @@ display: flex;
 justify-content: space-between;
 margin: 0 6px;
 font-size: 1.2rem;
-    font-weight: 300;
+font-weight: 300;
+padding-bottom: 10px;
 }
 
 .product-item__brand{
