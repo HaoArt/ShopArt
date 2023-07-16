@@ -10,16 +10,19 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
     <link rel="stylesheet" href="assets/font/fontawesome-free-6.4.0-web/css/all.css">
     <link rel="stylesheet" href="assets/css/base.css">
+    <link rel="stylesheet" href="assets/css/grid.css">
     <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
 </head>
 
 <body>
-    <div class="main">
+    <div class="app">
 
         <!-- header -->
         <header class="header">
-            <div class="grid">
-                <nav class="navbar">
+            <div class="grid wide">
+    
+                <nav class="navbar hide-on-mobile-tablet">
                     <ul class="navbar__list">
                         <li class="navbar__item navbar__item--show-qr navbar__item--separate">
                             Vào cửa hàng trên ứng dụng ShopArt
@@ -45,10 +48,10 @@
                     </ul>
                     <ul class="navbar__list">
                         <li class="navbar__item navbar--Show-notify">
-                            <a href="" class="navbar__item-icon">
+                            <a href="#" class="navbar__item-icon">
                                 <i class="navbar__icon far fa-bell"></i>
                             </a>
-                            <a href="" class="navbar__item-link ">Thông báo</a>
+                            <a href="#" class="navbar__item-link ">Thông báo</a>
                             <div class="header__notify">
                                 <header class="header__notify-header">
                                     <h3>Thông báo mới nhận</h3>
@@ -127,14 +130,15 @@
                                             </div>
                                         </a>
                                     </li>
-                                    <footer class="header__notify-footer">
 
-                                        <a class="notify__footer-btn" href="">Xem tất cả</a>
-
-                                    </footer>
 
 
                                 </ul>
+                                <footer class="header__notify-footer">
+
+                                    <a class="notify__footer-btn" href="">Xem tất cả</a>
+
+                                </footer>
                             </div>
                         </li>
                         <li class="navbar__item">
@@ -149,7 +153,8 @@
                         <!-- user name -->
                         <li class="navbar__item navbar__item-user">
                             <div class="navbar__item-user-wrap">
-                                <img src="https://zpsocial-f45-org.zadn.vn/dd6c8e52116ffe31a77e.jpg" alt="" class="navbar__item-user-avt">
+                                <img src="https://zpsocial-f45-org.zadn.vn/dd6c8e52116ffe31a77e.jpg" alt=""
+                                    class="navbar__item-user-avt">
                                 <span class="navbar__item-user-name">Hào Art</span>
                             </div>
                             <ul class="navbar__item-user-menu">
@@ -174,12 +179,57 @@
                 </nav>
 
                 <div class="header-width__search">
+                   <div class="nav__mobile">
+                        <div class="header__menu-nav">
+                            <input type="checkbox" name="" hidden id="header__menu-nav-icon-checkbox">
+                            <label for="header__menu-nav-icon-checkbox" class="header__menu-nav-icon">
+                                <i class="fas fa-bars"></i>
+                            </label>
+                            <label for="header__menu-nav-icon-checkbox" class="header__menu-nav-overlay"></label>
+                            <div class="header__menu-nav-mobile">
+                                <ul class="header__menu-mobile-list">
+                                    <li class="header__menu-mobile-item">
+                                        <a href="" class="header__menu-mobile-link">Home
+                                        </a>
+                                        <label for="header__menu-nav-icon-checkbox"><i class="header__menu-mobile-icon fas fa-close"></i></label>
+                                        
+                                    </li>
+                                    <li class="header__menu-mobile-item">
+                                        <a href="" class="header__menu-mobile-link">Thông báo</a>
+                                    </li>
+                                    <li class="header__menu-mobile-item">
+                                        <a href="" class="header__menu-mobile-link">Hàng hóa đã mua</a>
+                                    </li>
+                                    <li class="header__menu-mobile-item">
+                                        <a href="" class="header__menu-mobile-link">Hàng hóa đã thích</a>
+                                    </li>
+                                    <li class="header__menu-mobile-item">
+                                        <a href="" class="header__menu-mobile-link">
 
-                    <div class="header__logo">
-                        <a  class="header__logo-link" href=""><img src="./assets/img/logo/logo-full-white.png" alt="" class="header__logo-img"></a>
+                                            <img src="https://zpsocial-f45-org.zadn.vn/dd6c8e52116ffe31a77e.jpg" alt="" class="header__menu-mobile-img">
+                                            <span class="header__menu-mobile-name">Hào Art</span>
+                                        </a>
+                                    </li>
+                                    <li class="header__menu-mobile-item">
+                                        <a href="" class="header__menu-mobile-link">Đăng xuất</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <label for="mobile-search-input" class="header__mobile-search">
+                            <i class="header__mobile-search-icon fas fa-search"></i>
+                        </label>
+                        
+                        <input type="checkbox" hidden id="mobile-search-input" class="header__search-checkbox">
+                   </div>
+                    <div class="header__logo  hide-on-tablet">
+                        <a class="header__logo-link" href=""><img src="./assets/img/logo/logo-full-white.png" alt=""
+                                class="header__logo-img"></a>
                     </div>
                     <!--search  -->
-                    <div class="header__search">
+
+                  
+                    <div class="header__search ">
                         <div class="header__search-input-wrap">
                             <input type="text" class="header__search-input" placeholder="Nhập để tìm kiếm sản phẩm ">
                             <div class="header__search-history">
@@ -204,7 +254,7 @@
                                     <span>Trong shop</span>
                                     <i class="fa-solid fa-check"></i>
                                 </li>
-                                
+
                                 <li class="search__select-option-item">
                                     <span>Ngoài shop</span>
                                     <i class="fa-solid fa-check"></i>
@@ -219,206 +269,235 @@
                     <!-- cart  -->
                     <div class="header__cart">
                         <div class="header__cart-wrap">
-                        <i class="header__cart-icon fa-solid fa-cart-shopping"></i>
-                        <span class="header__cart-notice">6</span>
-                        <!-- No card : header__cart-list--no-cart -->
-                        <div class="header__cart-list ">
-                            <img src="./assets/img/cart/no-cart.png" alt="" class="header__cart-no-cart-img">
-                            <span class="header__cart-no-cart-list">Chưa có sản phẩm</span>
+                            <i class="header__cart-icon fa-solid fa-cart-shopping"></i>
+                            <span class="header__cart-notice">6</span>
+                            <!-- No card : header__cart-list--no-cart -->
+                            <div class="header__cart-list ">
+                                <img src="./assets/img/cart/no-cart.png" alt="" class="header__cart-no-cart-img">
+                                <span class="header__cart-no-cart-list">Chưa có sản phẩm</span>
 
 
-                            <h4 class="header__cart-heading">Sản phẩm đã thêm </h4>
-                            <ul class="header__cart-list-item">
-                                <li class="header__cart-item">
-                                    <img src="https://salt.tikicdn.com/cache/w1200/ts/product/5c/1d/ed/ad299b78f8a5289406ab1936faf066f4.jpg" alt="" class="header__cart-img">
-                                    <div class="cart__item-info">
-                                        <div class="cart__item-head">
-                                            <h5 class="cart__item-head-name">Lập trình hướng đối tượng JAVA core dành cho người mới bắt đầu học lập trình</h5>
-                                            <div class="cart__item-head-price-wrap">
-                                                <span class="cart__item-head-price">289.000 ₫</span>
-                                                <span class="cart__item-head-multiply">x</span>
-                                                <span class="cart__item-head-quantity">1</span>
+                                <h4 class="header__cart-heading">Sản phẩm đã thêm </h4>
+                                <ul class="header__cart-list-item">
+                                    <li class="header__cart-item">
+                                        <img src="https://salt.tikicdn.com/cache/w1200/ts/product/5c/1d/ed/ad299b78f8a5289406ab1936faf066f4.jpg"
+                                            alt="" class="header__cart-img">
+                                        <div class="cart__item-info">
+                                            <div class="cart__item-head">
+                                                <h5 class="cart__item-head-name">Lập trình hướng đối tượng JAVA core
+                                                    dành cho người mới bắt đầu học lập trình</h5>
+                                                <div class="cart__item-head-price-wrap">
+                                                    <span class="cart__item-head-price">289.000 ₫</span>
+                                                    <span class="cart__item-head-multiply">x</span>
+                                                    <span class="cart__item-head-quantity">1</span>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="cart__item-body">
-                                            <span class="cart__item-body-dsc">
-                                                Mã loại hàng: Sách
+                                            <div class="cart__item-body">
+                                                <span class="cart__item-body-dsc">
+                                                    Mã loại hàng: Sách
                                                 </span>
-                                            <span class="cart__item-body-remove ">
-                                                Xóa
-                                            </span>
-                                        </div>
-                                    </div>
-                                </li>
-
-                                <li class="header__cart-item">
-                                    <img src="https://th.bing.com/th/id/OIP.BKyAEx2wgtLPz93WjSrLjQHaFj?w=241&h=181&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="" class="header__cart-img">
-                                    <div class="cart__item-info">
-                                        <div class="cart__item-head">
-                                            <h5 class="cart__item-head-name">Danh sách liên kết sắp xếp.</h5>
-                                            <div class="cart__item-head-price-wrap">
-                                                <span class="cart__item-head-price">499.000đ</span>
-                                                <span class="cart__item-head-multiply">x</span>
-                                                <span class="cart__item-head-quantity">2</span>
-                                            </div>
-                                        </div>
-                                        <div class="cart__item-body">
-                                            <span class="cart__item-body-dsc">
-                                                Mã loại hàng: Sách
-                                            </span>
-                                            <span class="cart__item-body-remove">
-                                                Xóa
-                                            </span>
-                                        </div>
-                                    </div>
-                                </li>
-
-                                <li class="header__cart-item">
-                                    <img src="https://down-vn.img.susercontent.com/file/124a8a430211ad5aa26e087ccbd45796_tn" alt="" class="header__cart-img">
-                                    <div class="cart__item-info">
-                                        <div class="cart__item-head">
-                                            <h5 class="cart__item-head-name">Mô hình Kimetsu No Yaiba figure Demon Slayer Agatsuma Zenitsu cao 16 cm - figure thanh gươm diệt quỷ"</h5>
-                                            <div class="cart__item-head-price-wrap">
-                                                <span class="cart__item-head-price">3.000.000đ</span>
-                                                <span class="cart__item-head-multiply">x</span>
-                                                <span class="cart__item-head-quantity">2</span>
-                                            </div>
-                                        </div>
-                                        <div class="cart__item-body">
-                                            <span class="cart__item-body-dsc">
-                                                Mã loại hàng: Nhựa cao cấp
-                                            </span>
-                                            <span class="cart__item-body-remove">
-                                                Xóa
-                                            </span>
-                                        </div>
-                                    </div>
-                                </li>
-
-                                <li class="header__cart-item">
-                                    <img src="https://down-vn.img.susercontent.com/file/28ede9c2823014dbc5c1b7fb6fcd82cf_tn" alt="" class="header__cart-img">
-                                    <div class="cart__item-info">
-                                        <div class="cart__item-head">
-                                            <h5 class="cart__item-head-name">bánh tráng trộn thập cẩm sate đậu phộng hành phi nước sốt me tép full toping</h5>
-                                            <div class="cart__item-head-price-wrap">
-                                                <span class="cart__item-head-price">28.000 ₫</span>
-                                                <span class="cart__item-head-multiply">x</span>
-                                                <span class="cart__item-head-quantity">1</span>
-                                            </div>
-                                        </div>
-                                        <div class="cart__item-body">
-                                            <span class="cart__item-body-dsc">
-                                                Mã loại hàng: Ăn vặt
+                                                <span class="cart__item-body-remove ">
+                                                    Xóa
                                                 </span>
-                                            <span class="cart__item-body-remove ">
-                                                Xóa
-                                            </span>
-                                        </div>
-                                    </div>
-                                </li>
-
-                                <li class="header__cart-item">
-                                    <img src="https://down-vn.img.susercontent.com/file/vn-11134201-23020-4te31fp5dxnv66_tn" alt="" class="header__cart-img">
-                                    <div class="cart__item-info">
-                                        <div class="cart__item-head">
-                                            <h5 class="cart__item-head-name">(GIFT) Gấu bông trái bơ tròn nhỏ size 15cm cho bé xinh cute Gấu Xinh G12.1</h5>
-                                            <div class="cart__item-head-price-wrap">
-                                                <span class="cart__item-head-price">99.000đ</span>
-                                                <span class="cart__item-head-multiply">x</span>
-                                                <span class="cart__item-head-quantity">2</span>
                                             </div>
                                         </div>
-                                        <div class="cart__item-body">
-                                            <span class="cart__item-body-dsc">
-                                                Mã loại hàng: Gấu bông
-                                            </span>
-                                            <span class="cart__item-body-remove">
-                                                Xóa
-                                            </span>
-                                        </div>
-                                    </div>
-                                </li>
+                                    </li>
 
-                                <li class="header__cart-item">
-                                    <img src="https://down-vn.img.susercontent.com/file/cn-11134211-7qukw-lhm04mom0l262d_tn" alt="" class="header__cart-img">
-                                    <div class="cart__item-info">
-                                        <div class="cart__item-head">
-                                            <h5 class="cart__item-head-name">Dép Quai Ngang Chống Trượt Thoải Mái Thời Trang Cho Nam</h5>
-                                            <div class="cart__item-head-price-wrap">
-                                                <span class="cart__item-head-price">49.000đ</span>
-                                                <span class="cart__item-head-multiply">x</span>
-                                                <span class="cart__item-head-quantity">1</span>
+                                    <li class="header__cart-item">
+                                        <img src="https://th.bing.com/th/id/OIP.BKyAEx2wgtLPz93WjSrLjQHaFj?w=241&h=181&c=7&r=0&o=5&dpr=1.3&pid=1.7"
+                                            alt="" class="header__cart-img">
+                                        <div class="cart__item-info">
+                                            <div class="cart__item-head">
+                                                <h5 class="cart__item-head-name">Danh sách liên kết sắp xếp.</h5>
+                                                <div class="cart__item-head-price-wrap">
+                                                    <span class="cart__item-head-price">499.000đ</span>
+                                                    <span class="cart__item-head-multiply">x</span>
+                                                    <span class="cart__item-head-quantity">2</span>
+                                                </div>
+                                            </div>
+                                            <div class="cart__item-body">
+                                                <span class="cart__item-body-dsc">
+                                                    Mã loại hàng: Sách
+                                                </span>
+                                                <span class="cart__item-body-remove">
+                                                    Xóa
+                                                </span>
                                             </div>
                                         </div>
-                                        <div class="cart__item-body">
-                                            <span class="cart__item-body-dsc">
-                                                Mã loại hàng: Kim cương
-                                            </span>
-                                            <span class="cart__item-body-remove">
-                                                Xóa
-                                            </span>
-                                        </div>
-                                    </div>
-                                </li>
+                                    </li>
 
-                                
-                            </ul>
-                            <button class="btn btn--primary cart__item-view-cart">Xem giỏ hàng</button>
-                        </div>
+                                    <li class="header__cart-item">
+                                        <img src="https://down-vn.img.susercontent.com/file/124a8a430211ad5aa26e087ccbd45796_tn"
+                                            alt="" class="header__cart-img">
+                                        <div class="cart__item-info">
+                                            <div class="cart__item-head">
+                                                <h5 class="cart__item-head-name">Mô hình Kimetsu No Yaiba figure Demon
+                                                    Slayer Agatsuma Zenitsu cao 16 cm - figure thanh gươm diệt quỷ"</h5>
+                                                <div class="cart__item-head-price-wrap">
+                                                    <span class="cart__item-head-price">3.000.000đ</span>
+                                                    <span class="cart__item-head-multiply">x</span>
+                                                    <span class="cart__item-head-quantity">2</span>
+                                                </div>
+                                            </div>
+                                            <div class="cart__item-body">
+                                                <span class="cart__item-body-dsc">
+                                                    Mã loại hàng: Nhựa cao cấp
+                                                </span>
+                                                <span class="cart__item-body-remove">
+                                                    Xóa
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                    <li class="header__cart-item">
+                                        <img src="https://down-vn.img.susercontent.com/file/28ede9c2823014dbc5c1b7fb6fcd82cf_tn"
+                                            alt="" class="header__cart-img">
+                                        <div class="cart__item-info">
+                                            <div class="cart__item-head">
+                                                <h5 class="cart__item-head-name">bánh tráng trộn thập cẩm sate đậu phộng
+                                                    hành phi nước sốt me tép full toping</h5>
+                                                <div class="cart__item-head-price-wrap">
+                                                    <span class="cart__item-head-price">28.000 ₫</span>
+                                                    <span class="cart__item-head-multiply">x</span>
+                                                    <span class="cart__item-head-quantity">1</span>
+                                                </div>
+                                            </div>
+                                            <div class="cart__item-body">
+                                                <span class="cart__item-body-dsc">
+                                                    Mã loại hàng: Ăn vặt
+                                                </span>
+                                                <span class="cart__item-body-remove ">
+                                                    Xóa
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                    <li class="header__cart-item">
+                                        <img src="https://down-vn.img.susercontent.com/file/vn-11134201-23020-4te31fp5dxnv66_tn"
+                                            alt="" class="header__cart-img">
+                                        <div class="cart__item-info">
+                                            <div class="cart__item-head">
+                                                <h5 class="cart__item-head-name">(GIFT) Gấu bông trái bơ tròn nhỏ size
+                                                    15cm cho bé xinh cute Gấu Xinh G12.1</h5>
+                                                <div class="cart__item-head-price-wrap">
+                                                    <span class="cart__item-head-price">99.000đ</span>
+                                                    <span class="cart__item-head-multiply">x</span>
+                                                    <span class="cart__item-head-quantity">2</span>
+                                                </div>
+                                            </div>
+                                            <div class="cart__item-body">
+                                                <span class="cart__item-body-dsc">
+                                                    Mã loại hàng: Gấu bông
+                                                </span>
+                                                <span class="cart__item-body-remove">
+                                                    Xóa
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                    <li class="header__cart-item">
+                                        <img src="https://down-vn.img.susercontent.com/file/cn-11134211-7qukw-lhm04mom0l262d_tn"
+                                            alt="" class="header__cart-img">
+                                        <div class="cart__item-info">
+                                            <div class="cart__item-head">
+                                                <h5 class="cart__item-head-name">Dép Quai Ngang Chống Trượt Thoải Mái
+                                                    Thời Trang Cho Nam</h5>
+                                                <div class="cart__item-head-price-wrap">
+                                                    <span class="cart__item-head-price">49.000đ</span>
+                                                    <span class="cart__item-head-multiply">x</span>
+                                                    <span class="cart__item-head-quantity">1</span>
+                                                </div>
+                                            </div>
+                                            <div class="cart__item-body">
+                                                <span class="cart__item-body-dsc">
+                                                    Mã loại hàng: Kim cương
+                                                </span>
+                                                <span class="cart__item-body-remove">
+                                                    Xóa
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </li>
+
+
+                                </ul>
+                                <button class="btn btn--primary cart__item-view-cart">Xem giỏ hàng</button>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+            <ul class="header__sort-bar">
+                <li class="header__sort-item">
+                    <a href="" class="header__sort-link">Liên quan</a>
+                </li>
+                <li class="header__sort-item header__sort--active">
+                    <a href="" class="header__sort-link ">Mới nhất</a>
+                </li>
+                <li class="header__sort-item">
+                    <a href="" class="header__sort-link">Bán chạy</a>
+                </li>
+                <li class="header__sort-item">
+                    <a href="" class="header__sort-link">Giá</a>
+                </li>
+            </ul>
         </header>
 
         <!-- container -->
         <div class="app__container">
-            <div class="grid">     
-                <div class="grid__row app__content">
-                    <div class="grid__column-2">
+            <div class="grid wide">
+                <div class="row app__content">
+                    <div class="col l-2 m-0 c-0">
                         <div class="category">
                             <h3 class="category__heading">
                                 <i class="category__heading-icon fas fa-list"></i>
-                            
+
                                 Danh mục
                             </h3>
                             <ul class="category__list">
                                 <li class="category__item category__item-active">
                                     <a class="category__item-link" href="">Trang điểm mặt</a>
                                 </li>
-            
+
                                 <li class="category__item">
                                     <a class="category__item-link" href="">Trang điểm môi</a>
                                 </li>
-            
+
                                 <li class="category__item">
                                     <a class="category__item-link" href="">Trang điểm mắt</a>
                                 </li>
-                                
+
                             </ul>
                         </div>
                     </div>
-    
-                    <div class="grid__column-10">
-                        <div class="home__filter">
-                            <span class="home__filter-label">Sắp xếp theo</span>
-                            <button class="home__filter-btn btn">Phổ biến</button>
-                            <button class="home__filter-btn btn btn--primary">Mới nhất</button>
-                            <button class="home__filter-btn btn">Bán chạy</button>
 
-                            <div class="select__input">
-                                <span class="select__input-label">
-                                    Giá
-                                </span>
-                                <i class="select__input-icon fas fa-angle-down"></i>
-                                <ul class="select__input-list">
-                                    <li class="select__input-item ">
-                                        <a href="" class="select__input-link">Giá: Thấp đến cao</a>
-                                    </li>
-                                    <li class="select__input-item">
-                                        <a href="" class="select__input-link">Giá: Cao đến thấp</a>
-                                    </li>
-                                </ul>
+                    <div class="col l-10 m-12 c-12">
+                        <div class="home__filter hide-on-mobile-tablet">
+                           <div class="home__filter-wrap">
+                                <span class="home__filter-label">Sắp xếp theo</span>
+                                <button class="home__filter-btn btn">Phổ biến</button>
+                                <button class="home__filter-btn btn btn--primary">Mới nhất</button>
+                                <button class="home__filter-btn btn">Bán chạy</button>
+
+                           </div>
+                            <div class="home__filter-wrap">
+                                <div class="select__input">
+                                    <span class="select__input-label">
+                                        Giá
+                                    </span>
+                                    <i class="select__input-icon fas fa-angle-down"></i>
+                                    <ul class="select__input-list">
+                                        <li class="select__input-item ">
+                                            <a href="" class="select__input-link">Giá: Thấp đến cao</a>
+                                        </li>
+                                        <li class="select__input-item">
+                                            <a href="" class="select__input-link">Giá: Cao đến thấp</a>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
 
                             <div class="home__filter-page">
@@ -436,12 +515,49 @@
                                 </div>
                             </div>
                         </div>
+                        <nav class="mobile-category">
+                            <ul class="mobile-category__list">
+                                <li class="mobile-category__item">
+                                    
+                                    <a href="" class="mobile-category__link">Dụng cụ & thiết bị tiện ích</a>
+                                </li>
 
+                                <li class="mobile-category__item">
+                                    <a href="" class="mobile-category__link">Thiết bị điện gia dụng</a>
+                                </li>
+
+                                <li class="mobile-category__item">
+                                    <a href="" class="mobile-category__link">Đồ dùng phòng bếp</a>
+                                </li>
+
+                                <li class="mobile-category__item">
+                                    <a href="" class="mobile-category__link">Trang điểm mặt</a>
+                                </li>
+
+                                <li class="mobile-category__item">
+                                    <a href="" class="mobile-category__link">Trang điểm mắt</a>
+                                </li>
+
+                                <li class="mobile-category__item">
+                                    <a href="" class="mobile-category__link">Mô hình</a>
+                                </li>
+
+                                <li class="mobile-category__item">
+                                    <a href="" class="mobile-category__link">Người yêu</a>
+                                </li>
+
+                                <li class="mobile-category__item">
+                                    <a href="" class="mobile-category__link">Trang điểm môi</a>
+                                </li>
+                            </ul>
+                        </nav>
                         <div class="home__product">
-                            <div class="grid__row">
-                                <div class="grid__column-2-4">
+                            <div class="row sm-gutter">
+                                <div class="col l-2-4 m-4 c-6">
                                     <a href="#" class="home__product-item">
-                                        <div class="product__item-img" style="background-image: url(https://down-vn.img.susercontent.com/file/c23c93349cba77511061dd82f7e0738b);"></div>
+                                        <div class="product__item-img"
+                                            style="background-image: url(https://down-vn.img.susercontent.com/file/c23c93349cba77511061dd82f7e0738b);">
+                                        </div>
                                         <h4 class="product__item-name">
                                             Mô hình Zoro ( one piece ) hàng chính hãng siêu đẹp
                                         </h4>
@@ -455,15 +571,17 @@
                                                 <i class="product__item-like-fill fas fa-heart"></i>
                                             </span>
 
-                                            <div class="product__item-rating">
-                                                <i class="product__item-gold fas fa-star"></i>
-                                                <i class="product__item-gold fas fa-star"></i>
-                                                <i class="product__item-gold fas fa-star"></i>
-                                                <i class="product__item-gold fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                            </div>
+                                            <div class="product__item-rating-wrap">
+                                                <div class="product__item-rating">
+                                                    <i class="product__item-gold fas fa-star"></i>
+                                                    <i class="product__item-gold fas fa-star"></i>
+                                                    <i class="product__item-gold fas fa-star"></i>
+                                                    <i class="product__item-gold fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                </div>
 
-                                            <span class="product__item-sold">88 đã bán</span>
+                                                <span class="product__item-sold">88 đã bán</span>
+                                            </div>
                                         </div>
                                         <div class="product__item-origin">
                                             <span class="product-item__brand">Whoo</span>
@@ -481,9 +599,11 @@
                                     </a>
                                 </div>
 
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <a href="#" class="home__product-item">
-                                        <div class="product__item-img" style="background-image: url(http://down-vn.img.susercontent.com/file/93b3f6d4799b06f9279f817540daa4d1_tn)"></div>
+                                        <div class="product__item-img"
+                                            style="background-image: url(http://down-vn.img.susercontent.com/file/93b3f6d4799b06f9279f817540daa4d1_tn)">
+                                        </div>
                                         <h4 class="product__item-name">
                                             Apple iPhone 14 Pro Max 128GB
                                         </h4>
@@ -496,16 +616,17 @@
                                                 <i class="product__item-like-empty far fa-heart"></i>
                                                 <i class="product__item-like-fill fas fa-heart"></i>
                                             </span>
+                                            <div class="product__item-rating-wrap">
+                                                <div class="product__item-rating">
+                                                    <i class="product__item-gold fas fa-star"></i>
+                                                    <i class="product__item-gold fas fa-star"></i>
+                                                    <i class="product__item-gold fas fa-star"></i>
+                                                    <i class="product__item-gold fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                </div>
 
-                                            <div class="product__item-rating">
-                                                <i class="product__item-gold fas fa-star"></i>
-                                                <i class="product__item-gold fas fa-star"></i>
-                                                <i class="product__item-gold fas fa-star"></i>
-                                                <i class="product__item-gold fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
+                                                <span class="product__item-sold">4,3k Đã bán</span>
                                             </div>
-
-                                            <span class="product__item-sold">Đã bán 4,3k</span>
                                         </div>
                                         <div class="product__item-origin">
                                             <span class="product-item__brand">Whoo</span>
@@ -520,12 +641,15 @@
                                             <span class="product-item__sale-persent">7%</span>
                                             <span class="product-item__sale-label">GIẢM</span>
                                         </div>
+
                                     </a>
                                 </div>
 
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <a href="#" class="home__product-item">
-                                        <div class="product__item-img" style="background-image: url(https://down-vn.img.susercontent.com/file/vn-11134207-7qukw-lfavfvipfjat6d_tn);"></div>
+                                        <div class="product__item-img"
+                                            style="background-image: url(https://down-vn.img.susercontent.com/file/vn-11134207-7qukw-lfavfvipfjat6d_tn);">
+                                        </div>
                                         <h4 class="product__item-name">
                                             quần ống rộng cạp cao túi vuông có dây m22
                                         </h4>
@@ -538,16 +662,17 @@
                                                 <i class="product__item-like-empty far fa-heart"></i>
                                                 <i class="product__item-like-fill fas fa-heart"></i>
                                             </span>
+                                            <div class="product__item-rating-wrap">
+                                                <div class="product__item-rating">
+                                                    <i class="product__item-gold fas fa-star"></i>
+                                                    <i class="product__item-gold fas fa-star"></i>
+                                                    <i class="product__item-gold fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                </div>
 
-                                            <div class="product__item-rating">
-                                                <i class="product__item-gold fas fa-star"></i>
-                                                <i class="product__item-gold fas fa-star"></i>
-                                                <i class="product__item-gold fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
+                                                <span class="product__item-sold">128 đã bán</span>
                                             </div>
-
-                                            <span class="product__item-sold">128 đã bán</span>
                                         </div>
                                         <div class="product__item-origin">
                                             <span class="product-item__brand">Whoo</span>
@@ -565,11 +690,13 @@
                                     </a>
                                 </div>
 
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <a href="#" class="home__product-item">
-                                        <div class="product__item-img" style="background-image: url(https://down-vn.img.susercontent.com/file/204ebadfadef7fcc3055e32c64e455c1_tn);"></div>
+                                        <div class="product__item-img"
+                                            style="background-image: url(https://down-vn.img.susercontent.com/file/204ebadfadef7fcc3055e32c64e455c1_tn);">
+                                        </div>
                                         <h4 class="product__item-name">
-                                           Hộp đựng hình con gấu (trong suốt) cute
+                                            Hộp đựng hình con gấu (trong suốt) cute
                                         </h4>
                                         <div class="product__item-price">
                                             <span class="item__price-old">85.000đ</span>
@@ -580,16 +707,17 @@
                                                 <i class="product__item-like-empty far fa-heart"></i>
                                                 <i class="product__item-like-fill fas fa-heart"></i>
                                             </span>
+                                            <div class="product__item-rating-wrap">
+                                                <div class="product__item-rating">
+                                                    <i class="product__item-gold fas fa-star"></i>
+                                                    <i class="product__item-gold fas fa-star"></i>
+                                                    <i class="product__item-gold fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                </div>
 
-                                            <div class="product__item-rating">
-                                                <i class="product__item-gold fas fa-star"></i>
-                                                <i class="product__item-gold fas fa-star"></i>
-                                                <i class="product__item-gold fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
+                                                <span class="product__item-sold">92 đã bán</span>
                                             </div>
-
-                                            <span class="product__item-sold">92 đã bán</span>
                                         </div>
                                         <div class="product__item-origin">
                                             <span class="product-item__brand">Whoo</span>
@@ -607,9 +735,11 @@
                                     </a>
                                 </div>
 
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <a href="#" class="home__product-item">
-                                        <div class="product__item-img" style="background-image: url(https://down-vn.img.susercontent.com/file/vn-11134207-7qukw-li8hjsn905jg88_tn);"></div>
+                                        <div class="product__item-img"
+                                            style="background-image: url(https://down-vn.img.susercontent.com/file/vn-11134207-7qukw-li8hjsn905jg88_tn);">
+                                        </div>
                                         <h4 class="product__item-name">
                                             Muối Tắm Sữa Bò A Bonne Tẩy Tế Bào Da Chết Body Thái Lan 350gr
                                         </h4>
@@ -622,16 +752,17 @@
                                                 <i class="product__item-like-empty far fa-heart"></i>
                                                 <i class="product__item-like-fill fas fa-heart"></i>
                                             </span>
+                                            <div class="product__item-rating-wrap">
+                                                <div class="product__item-rating">
+                                                    <i class="product__item-gold fas fa-star"></i>
+                                                    <i class="product__item-gold fas fa-star"></i>
+                                                    <i class="product__item-gold fas fa-star"></i>
+                                                    <i class="product__item-gold fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                </div>
 
-                                            <div class="product__item-rating">
-                                                <i class="product__item-gold fas fa-star"></i>
-                                                <i class="product__item-gold fas fa-star"></i>
-                                                <i class="product__item-gold fas fa-star"></i>
-                                                <i class="product__item-gold fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
+                                                <span class="product__item-sold">1,2k đã bán</span>
                                             </div>
-
-                                            <span class="product__item-sold">1,2k đã bán</span>
                                         </div>
                                         <div class="product__item-origin">
                                             <span class="product-item__brand">Whoo</span>
@@ -649,9 +780,11 @@
                                     </a>
                                 </div>
 
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <a href="#" class="home__product-item">
-                                        <div class="product__item-img" style="background-image: url(https://down-vn.img.susercontent.com/file/sg-11134201-22090-qjpdwi1353hvc4_tn);"></div>
+                                        <div class="product__item-img"
+                                            style="background-image: url(https://down-vn.img.susercontent.com/file/sg-11134201-22090-qjpdwi1353hvc4_tn);">
+                                        </div>
                                         <h4 class="product__item-name">
                                             Gấu bông đồ chơi YADOU hình mèo nhồi bông mềm mại
                                         </h4>
@@ -664,16 +797,17 @@
                                                 <i class="product__item-like-empty far fa-heart"></i>
                                                 <i class="product__item-like-fill fas fa-heart"></i>
                                             </span>
+                                            <div class="product__item-rating-wrap">
+                                                <div class="product__item-rating">
+                                                    <i class="product__item-gold fas fa-star"></i>
+                                                    <i class="product__item-gold fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                </div>
 
-                                            <div class="product__item-rating">
-                                                <i class="product__item-gold fas fa-star"></i>
-                                                <i class="product__item-gold fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
+                                                <span class="product__item-sold">198 đã bán</span>
                                             </div>
-
-                                            <span class="product__item-sold">198 đã bán</span>
                                         </div>
                                         <div class="product__item-origin">
                                             <span class="product-item__brand">Whoo</span>
@@ -688,12 +822,15 @@
                                             <span class="product-item__sale-persent">19%</span>
                                             <span class="product-item__sale-label">GIẢM</span>
                                         </div>
+
                                     </a>
                                 </div>
 
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <a href="#" class="home__product-item">
-                                        <div class="product__item-img" style="background-image: url(https://down-vn.img.susercontent.com/file/vn-11134207-7qukw-lh0psvntz8xfde_tn);"></div>
+                                        <div class="product__item-img"
+                                            style="background-image: url(https://down-vn.img.susercontent.com/file/vn-11134207-7qukw-lh0psvntz8xfde_tn);">
+                                        </div>
                                         <h4 class="product__item-name">
                                             Áo chống nắng cho bé, áo choàng chống nắng cho bé 100% cotton mềm mịn
                                         </h4>
@@ -706,16 +843,17 @@
                                                 <i class="product__item-like-empty far fa-heart"></i>
                                                 <i class="product__item-like-fill fas fa-heart"></i>
                                             </span>
+                                            <div class="product__item-rating-wrap">
+                                                <div class="product__item-rating">
+                                                    <i class="product__item-gold fas fa-star"></i>
+                                                    <i class="product__item-gold fas fa-star"></i>
+                                                    <i class="product__item-gold fas fa-star"></i>
+                                                    <i class=" fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                </div>
 
-                                            <div class="product__item-rating">
-                                                <i class="product__item-gold fas fa-star"></i>
-                                                <i class="product__item-gold fas fa-star"></i>
-                                                <i class="product__item-gold fas fa-star"></i>
-                                                <i class=" fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
+                                                <span class="product__item-sold">323 đã bán</span>
                                             </div>
-
-                                            <span class="product__item-sold">323 đã bán</span>
                                         </div>
                                         <div class="product__item-origin">
                                             <span class="product-item__brand">Whoo</span>
@@ -733,9 +871,11 @@
                                     </a>
                                 </div>
 
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <a href="#" class="home__product-item">
-                                        <div class="product__item-img" style="background-image: url(https://down-vn.img.susercontent.com/file/sg-11134201-22100-uqpp5h6xreiv8a_tn);"></div>
+                                        <div class="product__item-img"
+                                            style="background-image: url(https://down-vn.img.susercontent.com/file/sg-11134201-22100-uqpp5h6xreiv8a_tn);">
+                                        </div>
                                         <h4 class="product__item-name">
                                             Dép lông con sóc siêu cute xả khokho85k-85k sập giá
                                         </h4>
@@ -748,16 +888,17 @@
                                                 <i class="product__item-like-empty far fa-heart"></i>
                                                 <i class="product__item-like-fill fas fa-heart"></i>
                                             </span>
+                                            <div class="product__item-rating-wrap">
+                                                <div class="product__item-rating">
+                                                    <i class="product__item-gold fas fa-star"></i>
+                                                    <i class="product__item-gold fas fa-star"></i>
+                                                    <i class="product__item-gold fas fa-star"></i>
+                                                    <i class="product__item-gold fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                </div>
 
-                                            <div class="product__item-rating">
-                                                <i class="product__item-gold fas fa-star"></i>
-                                                <i class="product__item-gold fas fa-star"></i>
-                                                <i class="product__item-gold fas fa-star"></i>
-                                                <i class="product__item-gold fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
+                                                <span class="product__item-sold">8,5k đã bán</span>
                                             </div>
-
-                                            <span class="product__item-sold">8,5k đã bán</span>
                                         </div>
                                         <div class="product__item-origin">
                                             <span class="product-item__brand">Whoo</span>
@@ -775,12 +916,16 @@
                                     </a>
                                 </div>
 
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <a href="#" class="home__product-item">
-                                        <div class="product__item-img" style="background-image: url(https://down-vn.img.susercontent.com/file/vn-11134207-7qukw-lgb0gln7onsa97_tn);"></div>
-                                      
+                                        <div class="product__item-img"
+                                            style="background-image: url(https://down-vn.img.susercontent.com/file/vn-11134207-7qukw-lgb0gln7onsa97_tn);">
+                                        </div>
+
                                         <h4 class="product__item-name">
-                                            Gấu Bông Khủng Long Hóa Ếch Xanh, Gối Ôm Cho Bé  Chất Liệu Cao Cấp, Mềm Mại Dài 52Cm
+                                            Gấu Bông Khủng Long Hóa Ếch Xanh, Gối Ôm Cho Bé Chất Liệu Cao Cấp, Mềm Mại
+                                            Dài
+                                            52Cm
                                         </h4>
                                         <div class="product__item-price">
                                             <span class="item__price-old">230.000đ</span>
@@ -791,16 +936,17 @@
                                                 <i class="product__item-like-empty far fa-heart"></i>
                                                 <i class="product__item-like-fill fas fa-heart"></i>
                                             </span>
+                                            <div class="product__item-rating-wrap">
+                                                <div class="product__item-rating">
+                                                    <i class="product__item-gold fas fa-star"></i>
+                                                    <i class="product__item-gold fas fa-star"></i>
+                                                    <i class="product__item-gold fas fa-star"></i>
+                                                    <i class="product__item-gold fas fa-star"></i>
+                                                    <i class="product__item-gold fas fa-star"></i>
+                                                </div>
 
-                                            <div class="product__item-rating">
-                                                <i class="product__item-gold fas fa-star"></i>
-                                                <i class="product__item-gold fas fa-star"></i>
-                                                <i class="product__item-gold fas fa-star"></i>
-                                                <i class="product__item-gold fas fa-star"></i>
-                                                <i class="product__item-gold fas fa-star"></i>
+                                                <span class="product__item-sold">9,5k đã bán</span>
                                             </div>
-
-                                            <span class="product__item-sold">9,5k đã bán</span>
                                         </div>
                                         <div class="product__item-origin">
                                             <span class="product-item__brand">Whoo</span>
@@ -818,11 +964,15 @@
                                     </a>
                                 </div>
 
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <a href="#" class="home__product-item">
-                                        <div class="product__item-img" style="background-image: url(https://down-vn.img.susercontent.com/file/vn-11134201-7qukw-lht6q9twr0xxef_tn);"></div>
+                                        <div class="product__item-img"
+                                            style="background-image: url(https://down-vn.img.susercontent.com/file/vn-11134201-7qukw-lht6q9twr0xxef_tn);">
+                                        </div>
                                         <h4 class="product__item-name">
-                                            Bộ 2 dây tay cách điệu, chất vải mềm mịm, phù hợp đi chơi đi biển, thời trang hot hè AO5
+                                            Bộ 2 dây tay cách điệu, chất vải mềm mịm, phù hợp đi chơi đi biển, thời
+                                            trang
+                                            hot hè AO5
                                         </h4>
                                         <div class="product__item-price">
                                             <span class="item__price-old">150.000đ</span>
@@ -833,16 +983,17 @@
                                                 <i class="product__item-like-empty far fa-heart"></i>
                                                 <i class="product__item-like-fill fas fa-heart"></i>
                                             </span>
+                                            <div class="product__item-rating-wrap">
+                                                <div class="product__item-rating">
+                                                    <i class="product__item-gold fas fa-star"></i>
+                                                    <i class="product__item-gold fas fa-star"></i>
+                                                    <i class="product__item-gold fas fa-star"></i>
+                                                    <i class="product__item-gold fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                </div>
 
-                                            <div class="product__item-rating">
-                                                <i class="product__item-gold fas fa-star"></i>
-                                                <i class="product__item-gold fas fa-star"></i>
-                                                <i class="product__item-gold fas fa-star"></i>
-                                                <i class="product__item-gold fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
+                                                <span class="product__item-sold">95 đã bán</span>
                                             </div>
-
-                                            <span class="product__item-sold">95 đã bán</span>
                                         </div>
                                         <div class="product__item-origin">
                                             <span class="product-item__brand">Whoo</span>
@@ -860,9 +1011,11 @@
                                     </a>
                                 </div>
 
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <a href="#" class="home__product-item">
-                                        <div class="product__item-img" style="background-image: url(https://down-vn.img.susercontent.com/file/sg-11134201-23020-pyu716kmtunvb6_tn);"></div>
+                                        <div class="product__item-img"
+                                            style="background-image: url(https://down-vn.img.susercontent.com/file/sg-11134201-23020-pyu716kmtunvb6_tn);">
+                                        </div>
                                         <h4 class="product__item-name">
                                             One Túi Vải canvas Đeo Chéo Phong Cách Hàn Quốc Dành Cho Nữ
                                         </h4>
@@ -875,16 +1028,17 @@
                                                 <i class="product__item-like-empty far fa-heart"></i>
                                                 <i class="product__item-like-fill fas fa-heart"></i>
                                             </span>
+                                            <div class="product__item-rating-wrap">
+                                                <div class="product__item-rating">
+                                                    <i class="product__item-gold fas fa-star"></i>
+                                                    <i class="product__item-gold fas fa-star"></i>
+                                                    <i class="product__item-gold fas fa-star"></i>
+                                                    <i class="product__item-gold fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                </div>
 
-                                            <div class="product__item-rating">
-                                                <i class="product__item-gold fas fa-star"></i>
-                                                <i class="product__item-gold fas fa-star"></i>
-                                                <i class="product__item-gold fas fa-star"></i>
-                                                <i class="product__item-gold fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
+                                                <span class="product__item-sold">3k đã bán</span>
                                             </div>
-
-                                            <span class="product__item-sold">3k đã bán</span>
                                         </div>
                                         <div class="product__item-origin">
                                             <span class="product-item__brand">Whoo</span>
@@ -902,9 +1056,11 @@
                                     </a>
                                 </div>
 
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <a href="#" class="home__product-item">
-                                        <div class="product__item-img" style="background-image: url(https://down-vn.img.susercontent.com/file/sg-11134201-22120-5bu54ozol4kva7_tn);"></div>
+                                        <div class="product__item-img"
+                                            style="background-image: url(https://down-vn.img.susercontent.com/file/sg-11134201-22120-5bu54ozol4kva7_tn);">
+                                        </div>
                                         <h4 class="product__item-name">
                                             Đồng Hồ Phát Quang Hình Bươm Bướm
                                         </h4>
@@ -917,16 +1073,17 @@
                                                 <i class="product__item-like-empty far fa-heart"></i>
                                                 <i class="product__item-like-fill fas fa-heart"></i>
                                             </span>
+                                            <div class="product__item-rating-wrap">
+                                                <div class="product__item-rating">
+                                                    <i class="product__item-gold fas fa-star"></i>
+                                                    <i class="product__item-gold fas fa-star"></i>
+                                                    <i class="product__item-gold fas fa-star"></i>
+                                                    <i class="product__item-gold fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                </div>
 
-                                            <div class="product__item-rating">
-                                                <i class="product__item-gold fas fa-star"></i>
-                                                <i class="product__item-gold fas fa-star"></i>
-                                                <i class="product__item-gold fas fa-star"></i>
-                                                <i class="product__item-gold fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
+                                                <span class="product__item-sold">3,6k đã bán</span>
                                             </div>
-
-                                            <span class="product__item-sold">3,6k đã bán</span>
                                         </div>
                                         <div class="product__item-origin">
                                             <span class="product-item__brand">Whoo</span>
@@ -944,11 +1101,14 @@
                                     </a>
                                 </div>
 
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <a href="#" class="home__product-item">
-                                        <div class="product__item-img" style="background-image: url(https://down-vn.img.susercontent.com/file/sg-11134201-23020-od65w9tbv2mv08_tn);"></div>
+                                        <div class="product__item-img"
+                                            style="background-image: url(https://down-vn.img.susercontent.com/file/sg-11134201-23020-od65w9tbv2mv08_tn);">
+                                        </div>
                                         <h4 class="product__item-name">
-                                            1 Bộ Bó Hoa Nhân Tạo Dễ Thương Làm Quà Tặng Sinh Nhật / Valentine Ngày của mẹ
+                                            1 Bộ Bó Hoa Nhân Tạo Dễ Thương Làm Quà Tặng Sinh Nhật / Valentine Ngày của
+                                            mẹ
                                         </h4>
                                         <div class="product__item-price">
                                             <span class="item__price-old">259.000đ</span>
@@ -959,16 +1119,17 @@
                                                 <i class="product__item-like-empty far fa-heart"></i>
                                                 <i class="product__item-like-fill fas fa-heart"></i>
                                             </span>
+                                            <div class="product__item-rating-wrap">
+                                                <div class="product__item-rating">
+                                                    <i class="product__item-gold fas fa-star"></i>
+                                                    <i class="product__item-gold fas fa-star"></i>
+                                                    <i class="product__item-gold fas fa-star"></i>
+                                                    <i class="product__item-gold fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                </div>
 
-                                            <div class="product__item-rating">
-                                                <i class="product__item-gold fas fa-star"></i>
-                                                <i class="product__item-gold fas fa-star"></i>
-                                                <i class="product__item-gold fas fa-star"></i>
-                                                <i class="product__item-gold fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
+                                                <span class="product__item-sold">95 đã bán</span>
                                             </div>
-
-                                            <span class="product__item-sold">95 đã bán</span>
                                         </div>
                                         <div class="product__item-origin">
                                             <span class="product-item__brand">Whoo</span>
@@ -986,9 +1147,11 @@
                                     </a>
                                 </div>
 
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <a href="#" class="home__product-item">
-                                        <div class="product__item-img" style="background-image: url(https://down-vn.img.susercontent.com/file/sg-11134201-7qvfd-lhr2efbnuzu67f_tn);"></div>
+                                        <div class="product__item-img"
+                                            style="background-image: url(https://down-vn.img.susercontent.com/file/sg-11134201-7qvfd-lhr2efbnuzu67f_tn);">
+                                        </div>
                                         <h4 class="product__item-name">
                                             Đồ Chơi Súng Bắn Nước Tự Động Màu Đen Họa Tiết Hoạt Hình Dành Cho Bé Yêu
                                         </h4>
@@ -1001,16 +1164,17 @@
                                                 <i class="product__item-like-empty far fa-heart"></i>
                                                 <i class="product__item-like-fill fas fa-heart"></i>
                                             </span>
+                                            <div class="product__item-rating-wrap">
+                                                <div class="product__item-rating">
+                                                    <i class="product__item-gold fas fa-star"></i>
+                                                    <i class="product__item-gold fas fa-star"></i>
+                                                    <i class="product__item-gold fas fa-star"></i>
+                                                    <i class=" fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                </div>
 
-                                            <div class="product__item-rating">
-                                                <i class="product__item-gold fas fa-star"></i>
-                                                <i class="product__item-gold fas fa-star"></i>
-                                                <i class="product__item-gold fas fa-star"></i>
-                                                <i class=" fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
+                                                <span class="product__item-sold">375 đã bán</span>
                                             </div>
-
-                                            <span class="product__item-sold">375 đã bán</span>
                                         </div>
                                         <div class="product__item-origin">
                                             <span class="product-item__brand">Whoo</span>
@@ -1028,9 +1192,11 @@
                                     </a>
                                 </div>
 
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <a href="#" class="home__product-item">
-                                        <div class="product__item-img" style="background-image: url(https://down-vn.img.susercontent.com/file/vn-11134207-7qukw-lgpcg2qle2b68e_tn);"></div>
+                                        <div class="product__item-img"
+                                            style="background-image: url(https://down-vn.img.susercontent.com/file/vn-11134207-7qukw-lgpcg2qle2b68e_tn);">
+                                        </div>
                                         <h4 class="product__item-name">
                                             Áo phông cotton tay lỡ HOA 🌷"UNK" ulzang siêu xinh
                                         </h4>
@@ -1043,16 +1209,17 @@
                                                 <i class="product__item-like-empty far fa-heart"></i>
                                                 <i class="product__item-like-fill fas fa-heart"></i>
                                             </span>
+                                            <div class="product__item-rating-wrap">
+                                                <div class="product__item-rating">
+                                                    <i class="product__item-gold fas fa-star"></i>
+                                                    <i class="product__item-gold fas fa-star"></i>
+                                                    <i class="product__item-gold fas fa-star"></i>
+                                                    <i class="product__item-gold fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                </div>
 
-                                            <div class="product__item-rating">
-                                                <i class="product__item-gold fas fa-star"></i>
-                                                <i class="product__item-gold fas fa-star"></i>
-                                                <i class="product__item-gold fas fa-star"></i>
-                                                <i class="product__item-gold fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
+                                                <span class="product__item-sold">2,4k đã bán</span>
                                             </div>
-
-                                            <span class="product__item-sold">2,4k đã bán</span>
                                         </div>
                                         <div class="product__item-origin">
                                             <span class="product-item__brand">Whoo</span>
@@ -1070,11 +1237,14 @@
                                     </a>
                                 </div>
 
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <a href="#" class="home__product-item">
-                                        <div class="product__item-img" style="background-image: url(https://down-vn.img.susercontent.com/file/cd203fc368d6a8e165d31c8801d69e2b_tn);"></div>
+                                        <div class="product__item-img"
+                                            style="background-image: url(https://down-vn.img.susercontent.com/file/cd203fc368d6a8e165d31c8801d69e2b_tn);">
+                                        </div>
                                         <h4 class="product__item-name">
-                                            (XẢ HÀNG) Xe ô tô đồ chơi địa hình _ xe ô tô quán tính_xe ô tô mô hình cho bé
+                                            (XẢ HÀNG) Xe ô tô đồ chơi địa hình _ xe ô tô quán tính_xe ô tô mô hình cho
+                                            bé
                                         </h4>
                                         <div class="product__item-price">
                                             <span class="item__price-old">230.000đ</span>
@@ -1085,16 +1255,17 @@
                                                 <i class="product__item-like-empty far fa-heart"></i>
                                                 <i class="product__item-like-fill fas fa-heart"></i>
                                             </span>
+                                            <div class="product__item-rating-wrap">
+                                                <div class="product__item-rating">
+                                                    <i class="product__item-gold fas fa-star"></i>
+                                                    <i class="product__item-gold fas fa-star"></i>
+                                                    <i class="product__item-gold fas fa-star"></i>
+                                                    <i class="product__item-gold fas fa-star"></i>
+                                                    <i class="product__item-gold fas fa-star"></i>
+                                                </div>
 
-                                            <div class="product__item-rating">
-                                                <i class="product__item-gold fas fa-star"></i>
-                                                <i class="product__item-gold fas fa-star"></i>
-                                                <i class="product__item-gold fas fa-star"></i>
-                                                <i class="product__item-gold fas fa-star"></i>
-                                                <i class="product__item-gold fas fa-star"></i>
+                                                <span class="product__item-sold">4,9k đã bán</span>
                                             </div>
-
-                                            <span class="product__item-sold">4,9k đã bán</span>
                                         </div>
                                         <div class="product__item-origin">
                                             <span class="product-item__brand">Whoo</span>
@@ -1112,9 +1283,11 @@
                                     </a>
                                 </div>
 
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <a href="#" class="home__product-item">
-                                        <div class="product__item-img" style="background-image: url(https://down-vn.img.susercontent.com/file/646bb583d5c370efeb4f8ae7b616699e_tn);"></div>
+                                        <div class="product__item-img"
+                                            style="background-image: url(https://down-vn.img.susercontent.com/file/646bb583d5c370efeb4f8ae7b616699e_tn);">
+                                        </div>
                                         <h4 class="product__item-name">
                                             Bò miếng đại hằng giá siêu rẻ
                                         </h4>
@@ -1127,16 +1300,17 @@
                                                 <i class="product__item-like-empty far fa-heart"></i>
                                                 <i class="product__item-like-fill fas fa-heart"></i>
                                             </span>
+                                            <div class="product__item-rating-wrap">
+                                                <div class="product__item-rating">
+                                                    <i class="product__item-gold fas fa-star"></i>
+                                                    <i class="product__item-gold fas fa-star"></i>
+                                                    <i class="product__item-gold fas fa-star"></i>
+                                                    <i class="product__item-gold fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                </div>
 
-                                            <div class="product__item-rating">
-                                                <i class="product__item-gold fas fa-star"></i>
-                                                <i class="product__item-gold fas fa-star"></i>
-                                                <i class="product__item-gold fas fa-star"></i>
-                                                <i class="product__item-gold fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
+                                                <span class="product__item-sold">12,9k đã bán</span>
                                             </div>
-
-                                            <span class="product__item-sold">12,9k đã bán</span>
                                         </div>
                                         <div class="product__item-origin">
                                             <span class="product-item__brand">Whoo</span>
@@ -1154,10 +1328,12 @@
                                     </a>
                                 </div>
 
-                                
-                                <div class="grid__column-2-4">
+
+                                <div class="col l-2-4 m-4 c-6">
                                     <a href="#" class="home__product-item">
-                                        <div class="product__item-img" style="background-image: url(https://down-vn.img.susercontent.com/file/sg-11134202-23020-wj2wtyq9ihnvaa_tn);"></div>
+                                        <div class="product__item-img"
+                                            style="background-image: url(https://down-vn.img.susercontent.com/file/sg-11134202-23020-wj2wtyq9ihnvaa_tn);">
+                                        </div>
                                         <h4 class="product__item-name">
                                             Son Kem Lì Mềm Mịn Như Nhung Lâu Trôi Cấp Độ Cao Hình Que Kem USLIKE ~
                                         </h4>
@@ -1170,16 +1346,17 @@
                                                 <i class="product__item-like-empty far fa-heart"></i>
                                                 <i class="product__item-like-fill fas fa-heart"></i>
                                             </span>
+                                            <div class="product__item-rating-wrap">
+                                                <div class="product__item-rating">
+                                                    <i class="product__item-gold fas fa-star"></i>
+                                                    <i class="product__item-gold fas fa-star"></i>
+                                                    <i class="product__item-gold fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                </div>
 
-                                            <div class="product__item-rating">
-                                                <i class="product__item-gold fas fa-star"></i>
-                                                <i class="product__item-gold fas fa-star"></i>
-                                                <i class="product__item-gold fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
+                                                <span class="product__item-sold">954 đã bán</span>
                                             </div>
-
-                                            <span class="product__item-sold">954 đã bán</span>
                                         </div>
                                         <div class="product__item-origin">
                                             <span class="product-item__brand">Whoo</span>
@@ -1197,9 +1374,11 @@
                                     </a>
                                 </div>
 
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <a href="#" class="home__product-item">
-                                        <div class="product__item-img" style="background-image: url(https://down-vn.img.susercontent.com/file/vn-11134207-7qukw-lg3f6wq7hhey9e_tn);"></div>
+                                        <div class="product__item-img"
+                                            style="background-image: url(https://down-vn.img.susercontent.com/file/vn-11134207-7qukw-lg3f6wq7hhey9e_tn);">
+                                        </div>
                                         <h4 class="product__item-name">
                                             Dép sandal đế mềm dày 、bên ngoài dễ thương nơ 、mùa hè dành cho nữ
                                         </h4>
@@ -1212,16 +1391,17 @@
                                                 <i class="product__item-like-empty far fa-heart"></i>
                                                 <i class="product__item-like-fill fas fa-heart"></i>
                                             </span>
+                                            <div class="product__item-rating-wrap">
+                                                <div class="product__item-rating">
+                                                    <i class="product__item-gold fas fa-star"></i>
+                                                    <i class="product__item-gold fas fa-star"></i>
+                                                    <i class="product__item-gold fas fa-star"></i>
+                                                    <i class="product__item-gold fas fa-star"></i>
+                                                    <i class="product__item-gold fas fa-star"></i>
+                                                </div>
 
-                                            <div class="product__item-rating">
-                                                <i class="product__item-gold fas fa-star"></i>
-                                                <i class="product__item-gold fas fa-star"></i>
-                                                <i class="product__item-gold fas fa-star"></i>
-                                                <i class="product__item-gold fas fa-star"></i>
-                                                <i class="product__item-gold fas fa-star"></i>
+                                                <span class="product__item-sold">3,2k đã bán</span>
                                             </div>
-
-                                            <span class="product__item-sold">3,2k đã bán</span>
                                         </div>
                                         <div class="product__item-origin">
                                             <span class="product-item__brand">Whoo</span>
@@ -1239,9 +1419,11 @@
                                     </a>
                                 </div>
 
-                                <div class="grid__column-2-4">
+                                <div class="col l-2-4 m-4 c-6">
                                     <a href="#" class="home__product-item">
-                                        <div class="product__item-img" style="background-image: url(https://down-vn.img.susercontent.com/file/vn-11134207-7qukw-lfr0cx0trofe81_tn);"></div>
+                                        <div class="product__item-img"
+                                            style="background-image: url(https://down-vn.img.susercontent.com/file/vn-11134207-7qukw-lfr0cx0trofe81_tn);">
+                                        </div>
                                         <h4 class="product__item-name">
                                             Váy BabyDoll Voan Tơ Óng Nơ Cổ 3 Tầng 2 Màu Hồng Trắng
                                         </h4>
@@ -1254,16 +1436,17 @@
                                                 <i class="product__item-like-empty far fa-heart"></i>
                                                 <i class="product__item-like-fill fas fa-heart"></i>
                                             </span>
+                                            <div class="product__item-rating-wrap">
+                                                <div class="product__item-rating">
+                                                    <i class="product__item-gold fas fa-star"></i>
+                                                    <i class="product__item-gold fas fa-star"></i>
+                                                    <i class="product__item-gold fas fa-star"></i>
+                                                    <i class="product__item-gold fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                </div>
 
-                                            <div class="product__item-rating">
-                                                <i class="product__item-gold fas fa-star"></i>
-                                                <i class="product__item-gold fas fa-star"></i>
-                                                <i class="product__item-gold fas fa-star"></i>
-                                                <i class="product__item-gold fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
+                                                <span class="product__item-sold">624 đã bán</span>
                                             </div>
-
-                                            <span class="product__item-sold">624 đã bán</span>
                                         </div>
                                         <div class="product__item-origin">
                                             <span class="product-item__brand">Whoo</span>
@@ -1285,45 +1468,45 @@
 
                         <ul class="pagination home__product-pagination">
                             <li class="pagination__item">
-                               <a href="" class="pagination__item-link ">
-                                    <i class="pagination__item-icon fas fa-angle-left" ></i>
-                               </a>
+                                <a href="" class="pagination__item-link ">
+                                    <i class="pagination__item-icon fas fa-angle-left"></i>
+                                </a>
                             </li>
 
-                            
+
                             <li class="pagination__item pagination__item-active">
                                 <a href="" class="pagination__item-link  ">1</a>
-                             </li>
-                             
-                             <li class="pagination__item">
+                            </li>
+
+                            <li class="pagination__item">
                                 <a href="" class="pagination__item-link ">2</a>
-                             </li>
+                            </li>
 
-                             <li class="pagination__item">
+                            <li class="pagination__item">
                                 <a href="" class="pagination__item-link ">3</a>
-                             </li>
+                            </li>
 
-                             <li class="pagination__item">
+                            <li class="pagination__item">
                                 <a href="" class="pagination__item-link ">4</a>
-                             </li>
+                            </li>
 
-                             <li class="pagination__item">
+                            <li class="pagination__item">
                                 <a href="" class="pagination__item-link ">5</a>
-                             </li>
+                            </li>
 
-                             <li class="pagination__item">
+                            <li class="pagination__item">
                                 <a href="" class="pagination__item-link ">...</a>
-                             </li>
+                            </li>
 
-                             <li class="pagination__item">
+                            <li class="pagination__item">
                                 <a href="" class="pagination__item-link ">14</a>
-                             </li>
+                            </li>
 
                             <li class="pagination__item">
                                 <a href="" class="pagination__item-link ">
-                                     <i class="pagination__item-icon fas fa-angle-right" ></i>
+                                    <i class="pagination__item-icon fas fa-angle-right"></i>
                                 </a>
-                             </li>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -1332,9 +1515,9 @@
 
         <!-- footer -->
         <div class="footer">
-            <div class="grid">
-                <div class="grid__row">
-                    <div class="grid__column-2-4">
+            <div class="grid wide">
+                <div class="row ">
+                    <div class="col l-2-4 m-4 c-6">
                         <h3 class="footer-heading">Chăm sóc khách hàng</h3>
                         <ul class="footer__list">
                             <li class="footer__list-item">
@@ -1342,18 +1525,18 @@
                             </li>
 
                             <li class="footer__list-item">
-                            
+
                                 <a href="" class="list__item-link">Art-Shop Mall</a>
                             </li>
-                                
+
                             <li class="footer__list-item">
-                            
+
                                 <a href="" class="list__item-link">Hướng dẫm mua hàng</a>
                             </li>
                         </ul>
                     </div>
 
-                    <div class="grid__column-2-4">
+                    <div class="col l-2-4 m-4 c-6">
                         <h3 class="footer-heading">Giới thiệu</h3>
                         <ul class="footer__list">
                             <li class="footer__list-item">
@@ -1370,7 +1553,7 @@
                         </ul>
                     </div>
 
-                    <div class="grid__column-2-4">
+                    <div class="col l-2-4 m-4 c-6">
                         <h3 class="footer-heading">Danh mục</h3>
                         <ul class="footer__list">
                             <li class="footer__list-item">
@@ -1385,7 +1568,7 @@
                         </ul>
                     </div>
 
-                    <div class="grid__column-2-4">
+                    <div class="col l-2-4 m-4 c-6">
                         <h3 class="footer-heading">Theo dõi</h3>
                         <ul class="footer__list">
                             <li class="footer__list-item">
@@ -1397,39 +1580,41 @@
                             <li class="footer__list-item">
                                 <a href="" class="list__item-link">
                                     <i class="footer-item-icon fab fa-instagram"></i>
-                                    
+
                                     Instagram</a>
                             </li>
 
                             <li class="footer__list-item">
                                 <a href="" class="list__item-link">
                                     <i class="footer-item-icon fab fa-linkedin"></i>
-                                    
+
                                     Linkedin</a>
                             </li>
                         </ul>
                     </div>
 
-                    <div class="grid__column-2-4">
+                    <div class="col l-2-4 m-4 c-6 footer-link">
                         <h3 class="footer-heading">Vào cửa hàng trên ứng dụng</h3>
                         <div class="footer__download">
                             <img src="./assets/img/QR-code/QRcode.png" alt="" class="footer__download-img">
                             <div class="footer__download-app">
-                                <a href=""><img src="./assets/img/QR-code/google-play.png" alt="" class="download__app-img"></a>
-                                <a href=""><img src="./assets/img/QR-code/app-store.png" alt="" class="download__app-img"></a>
+                                <a href=""><img src="./assets/img/QR-code/google-play.png" alt=""
+                                        class="download__app-img"></a>
+                                <a href=""><img src="./assets/img/QR-code/app-store.png" alt=""
+                                        class="download__app-img"></a>
                             </div>
                         </div>
                     </div>
                 </div>
-                
+
             </div>
 
             <div class="footer__bottom">
-                <div class="grid">
-                <p class="footer-text">
-                    Made with  ❤️ · Powered by F8
-                </p>
-            </div>
+                <div class="grid wide">
+                    <p class="footer-text">
+                        Made with ❤️ By HaoArt
+                    </p>
+                </div>
             </div>
         </div>
 
@@ -1439,8 +1624,8 @@
     <!-- <div class="modal">
         <div class="modal__overlay"></div>
         <div class="modal__body"> -->
-            <!-- Register form-->
-            <!-- <div class="auth-form">
+    <!-- Register form-->
+    <!-- <div class="auth-form">
 
                 <div class="auth-form__container">
 
@@ -1494,8 +1679,8 @@
                 </div>
             </div> -->
 
-              <!-- Register form-->
-            <!-- <div class="auth-form">
+    <!-- Register form-->
+    <!-- <div class="auth-form">
 
                 <div class="auth-form__container">
 
