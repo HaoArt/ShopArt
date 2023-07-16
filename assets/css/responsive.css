@@ -62,7 +62,7 @@
     }
 
     .header__menu-nav {
-        width: 20px;
+        width: 40px;
     }
     .app__content {
         margin: 0 4px;
@@ -109,6 +109,7 @@
     }
     .header__mobile-search{
         display: block;
+        margin-left: -100px;
     }
 
     .header__search-history{
